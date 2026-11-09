@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Pilviö Ky – joustavat ja luotettavat LVI-palvelut Oulunkylässä ja koko pääkaupunkiseudulla. Putkistojen asennukset, huolto- ja korjaustyöt paikalliselta ammattilaiselta.">
+<title>Pilviö Ky – Joustavat LVI-palvelut Helsingissä | Oulunkylä</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f172a'/%3E%3Cpath d='M8 20c0-4 3-7 7-7 1 0 2 .2 3 .7C18.6 11 21 10 23 11.5c2 1.6 2.3 4.5 1 6.5H10c-1.2 0-2-1-2-2z' fill='%230284c7'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --accent:#0284c7;
+    --accent-light:#38bdf8;
+    --accent-dark:#075985;
+    --bg:#0b1220;
+    --bg-2:#101a2c;
+    --bg-3:#16233a;
+    --surface:#131f34;
+    --line:rgba(148,163,184,.16);
+    --text:#e6edf6;
+    --muted:#9fb0c6;
+    --radius:16px;
+    --shadow:0 18px 45px -18px rgba(2,8,23,.75);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  ul{list-style:none}
+  img,svg{display:block;max-width:100%}
+  :focus-visible{outline:3px solid var(--accent-light);outline-offset:3px;border-radius:6px}
+
+  /* ---------- DEMO banner ---------- */
+  .demo-banner{
+    position:sticky;top:0;z-index:60;
+    background:linear-gradient(90deg,var(--accent-dark),var(--accent),var(--accent-dark));
+    color:#fff;text-align:center;
+    font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    padding:.55rem 1rem;
+  }
+
+  /* ---------- Nav ---------- */
+  header.nav{
+    position:sticky;top:33px;z-index:50;
+    background:rgba(11,18,32,.82);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1140px;margin:0 auto;padding:.9rem 1.5rem;
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  }
+  .brand{display:flex;align-items:center;gap:.65rem;font-weight:800;font-size:1.15rem;letter-spacing:-.01em}
+  .brand svg{width:34px;height:34px}
+  .brand span em{font-style:normal;color:var(--accent-light)}
+  .nav-links{display:flex;gap:1.6rem;align-items:center}
+  .nav-links a{font-size:.93rem;color:var(--muted);font-weight:600;transition:color .2s}
+  .nav-links a:hover{color:var(--accent-light)}
+  .nav-cta{
+    background:var(--accent);color:#fff!important;font-weight:700;
+    padding:.55rem 1.15rem;border-radius:999px;
+    transition:background .2s,transform .2s,box-shadow .2s;
+    box-shadow:0 6px 18px -6px rgba(2,132,199,.6);
+  }
+  .nav-cta:hover{background:var(--accent-light);transform:translateY(-1px)}
+  .burger{
+    display:none;background:none;border:1px solid var(--line);border-radius:10px;
+    padding:.5rem .65rem;cursor:pointer;color:var(--text);
+  }
+  .burger svg{width:22px;height:22px}
+
+  /* ---------- Hero: offset split layout ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(900px 480px at 85% -10%,rgba(2,132,199,.22),transparent 60%),
+      radial-gradient(600px 400px at -10% 110%,rgba(56,189,248,.10),transparent 55%),
+      var(--bg);
+  }
+  .hero-inner{
+    max-width:1140px;margin:0 auto;padding:5.5rem 1.5rem 6.5rem;
+    display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:center;
+  }
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:.5rem;
+    border:1px solid rgba(56,189,248,.35);color:var(--accent-light);
+    background:rgba(2,132,199,.10);
+    padding:.4rem 1rem;border-radius:999px;font-size:.82rem;font-weight:700;
+    letter-spacing:.06em;text-transform:uppercase;margin-bottom:1.4rem;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem,4.6vw,3.6rem);line-height:1.08;
+    letter-spacing:-.03em;font-weight:800;margin-bottom:1.25rem;
+  }
+  .hero h1 .hl{
+    background:linear-gradient(92deg,var(--accent-light),var(--accent));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p.lede{font-size:1.12rem;color:var(--muted);max-width:34rem;margin-bottom:2rem}
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:.55rem;
+    font-weight:700;font-size:1rem;border-radius:12px;padding:.95rem 1.7rem;
+    cursor:pointer;border:none;transition:transform .2s,box-shadow .2s,background .2s;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;
+    box-shadow:0 14px 30px -10px rgba(2,132,199,.65);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 20px 38px -10px rgba(2,132,199,.75)}
+  .btn-ghost{
+    background:transparent;color:var(--text);border:1px solid var(--line);
+  }
+  .btn-ghost:hover{border-color:var(--accent-light);color:var(--accent-light)}
+  .hero-visual{position:relative}
+  .hero-visual .pipe-art{
+    width:100%;height:auto;border-radius:24px;
+    background:linear-gradient(160deg,var(--bg-3),var(--bg-2));
+    border:1px solid var(--line);box-shadow:var(--shadow);
+    padding:1.5rem;
+  }
+  .float-card{
+    position:absolute;background:var(--surface);border:1px solid var(--line);
+    border-radius:14px;box-shadow:var(--shadow);padding:.85rem 1.15rem;
+    display:flex;gap:.7rem;align-items:center;font-size:.86rem;font-weight:600;
+  }
+  .float-card svg{width:26px;height:26px;flex-shrink:0}
+  .float-a{top:-1.2rem;left:-1.4rem}
+  .float-b{bottom:-1.4rem;right:-1rem}
+  .float-card small{display:block;color:var(--muted);font-weight:500}
+
+  /* ---------- Sections ---------- */
+  section{padding:5rem 1.5rem}
+  .wrap{max-width:1140px;margin:0 auto}
+  .kicker{
+    color:var(--accent-light);font-size:.8rem;font-weight:800;
+    letter-spacing:.16em;text-transform:uppercase;margin-bottom:.6rem;
+  }
+  h2{font-size:clamp(1.7rem,3.2vw,2.4rem);letter-spacing:-.02em;line-height:1.15;margin-bottom:.75rem}
+  .section-lede{color:var(--muted);max-width:38rem;margin-bottom:2.75rem}
+
+  /* Services — staggered icon cards */
+  .services{background:var(--bg-2)}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .service-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:2rem 1.7rem;position:relative;overflow:hidden;
+    transition:transform .25s,border-color .25s,box-shadow .25s;
+  }
+  .service-card:nth-child(2){transform:translateY(1.4rem)}
+  .service-card:hover{
+    transform:translateY(-6px);border-color:rgba(56,189,248,.45);
+    box-shadow:0 22px 40px -18px rgba(2,132,199,.45);
+  }
+  .service-card:nth-child(2):hover{transform:translateY(calc(1.4rem - 6px))}
+  .service-card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,var(--accent),transparent);
+  }
+  .service-icon{
+    width:54px;height:54px;border-radius:14px;
+    background:linear-gradient(140deg,rgba(2,132,199,.25),rgba(2,132,199,.06));
+    border:1px solid rgba(56,189,248,.3);
+    display:grid;place-items:center;margin-bottom:1.25rem;
+  }
+  .service-icon svg{width:27px;height:27px}
+  .service-card h3{font-size:1.12rem;margin-bottom:.55rem;letter-spacing:-.01em}
+  .service-card p{color:var(--muted);font-size:.94rem}
+
+  /* Trust band */
+  .trust{
+    background:linear-gradient(180deg,var(--bg),var(--bg-2) 60%,var(--bg));
+  }
+  .trust-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center}
+  .trust-points li{
+    display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.35rem;
+  }
+  .trust-points li:last-child{margin-bottom:0}
+  .check-dot{
+    flex-shrink:0;width:30px;height:30px;border-radius:50%;
+    background:rgba(2,132,199,.16);border:1px solid rgba(56,189,248,.4);
+    display:grid;place-items:center;margin-top:.15rem;
+  }
+  .check-dot svg{width:15px;height:15px}
+  .trust-points strong{display:block;font-size:1.02rem}
+  .trust-points span{color:var(--muted);font-size:.92rem}
+  .badge-pill{
+    display:inline-flex;align-items:center;gap:.6rem;
+    background:linear-gradient(135deg,rgba(2,132,199,.2),rgba(2,132,199,.06));
+    border:1px solid rgba(56,189,248,.4);color:#dff3fd;
+    padding:.7rem 1.3rem;border-radius:999px;font-weight:700;font-size:.92rem;
+    margin-bottom:1.6rem;
+  }
+  .badge-pill svg{width:20px;height:20px}
+  /* Stat row — connected timeline strip */
+  .stat-strip{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);overflow:hidden;
+  }
+  .stat{
+    padding:2.2rem 1.4rem;text-align:center;position:relative;
+  }
+  .stat + .stat::before{
+    content:"";position:absolute;left:0;top:22%;bottom:22%;width:1px;
+    background:var(--line);
+  }
+  .stat .num{
+    font-size:clamp(2rem,4vw,2.8rem);font-weight:800;letter-spacing:-.03em;
+    background:linear-gradient(120deg,var(--accent-light),var(--accent));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .stat .lbl{color:var(--muted);font-size:.86rem;font-weight:600;margin-top:.25rem}
+  .local-line{
+    margin-top:2.2rem;padding:1.15rem 1.4rem;
+    border-left:3px solid var(--accent);background:rgba(2,132,199,.08);
+    border-radius:0 12px 12px 0;color:#d7e8f5;font-weight:600;font-size:1.02rem;
+  }
+
+  /* Testimonials */
+  .testimonials{background:var(--bg-2)}
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .testi-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:1.9rem 1.7rem;position:relative;
+    transition:transform .25s,border-color .25s;
+  }
+  .testi-card:hover{transform:translateY(-5px);border-color:rgba(56,189,248,.4)}
+  .quote-mark{
+    position:absolute;top:1.1rem;right:1.3rem;width:34px;height:34px;opacity:.35;
+  }
+  .stars{display:flex;gap:.2rem;margin-bottom:1rem}
+  .stars svg{width:16px;height:16px}
+  .testi-card p{color:#cfdbea;font-size:.95rem;margin-bottom:1.3rem}
+  .testi-who{display:flex;align-items:center;gap:.8rem}
+  .avatar{
+    width:42px;height:42px;border-radius:50%;flex-shrink:0;
+    background:linear-gradient(140deg,var(--accent),var(--accent-dark));
+    display:grid;place-items:center;font-weight:800;color:#fff;font-size:.95rem;
+  }
+  .testi-who strong{display:block;font-size:.92rem}
+  .testi-who small{color:var(--muted);font-size:.8rem}
+  .testi-note{
+    margin-top:1.8rem;text-align:center;color:var(--muted);
+    font-size:.82rem;font-style:italic;
+  }
+
+  /* Contact — offset panel layout */
+  .contact{
+    background:
+      radial-gradient(700px 420px at 110% 20%,rgba(2,132,199,.18),transparent 60%),
+      var(--bg);
+  }
+  .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem;align-items:start}
+  .contact-info li{
+    display:flex;gap:1rem;align-items:center;margin-bottom:1.2rem;
+    background:var(--surface);border:1px solid var(--line);
+    border-radius:12px;padding:1rem 1.2rem;
+  }
+  .contact-info svg{width:22px;height:22px;flex-shrink:0}
+  .contact-info strong{display:block;font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+  .contact-info span{font-weight:600}
+  form{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:2.2rem;box-shadow:var(--shadow);
+  }
+  .field{margin-bottom:1.2rem}
+  label{display:block;font-size:.85rem;font-weight:700;margin-bottom:.4rem}
+  input,textarea{
+    width:100%;background:var(--bg-2);border:1px solid var(--line);
+    border-radius:10px;color:var(--text);padding:.8rem 1rem;
+    font:inherit;font-size:.95rem;transition:border-color .2s,box-shadow .2s;
+  }
+  input::placeholder,textarea::placeholder{color:#5b6d85}
+  input:focus,textarea:focus{
+    outline:none;border-color:var(--accent-light);
+    box-shadow:0 0 0 3px rgba(56,189,248,.22);
+  }
+  textarea{min-height:130px;resize:vertical}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+  #form-msg{
+    display:none;margin-top:1.1rem;padding:1rem 1.2rem;border-radius:10px;
+    background:rgba(2,132,199,.14);border:1px solid rgba(56,189,248,.45);
+    color:#dff3fd;font-weight:600;
+  }
+  #form-msg.show{display:block}
+
+  /* Footer */
+  footer{
+    border-top:1px solid var(--line);background:var(--bg-2);
+    padding:2.6rem 1.5rem;text-align:center;
+  }
+  footer .f-brand{font-weight:800;font-size:1.05rem;margin-bottom:.4rem}
+  footer .f-brand em{font-style:normal;color:var(--accent-light)}
+  footer p{color:var(--muted);font-size:.86rem}
+  footer .f-demo{
+    margin-top:1rem;display:inline-block;
+    border:1px dashed rgba(56,189,248,.4);color:var(--accent-light);
+    padding:.45rem 1.1rem;border-radius:999px;font-size:.78rem;font-weight:700;
+    letter-spacing:.08em;text-transform:uppercase;
+  }
+
+  /* Reveal animation */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:920px){
+    .hero-inner{grid-template-columns:1fr;padding-top:4rem;gap:4.5rem}
+    .trust-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem}
+    .service-grid,.testi-grid{grid-template-columns:1fr 1fr}
+    .service-card:nth-child(2){transform:none}
+    .service-card:nth-child(2):hover{transform:translateY(-6px)}
+  }
+  @media (max-width:640px){
+    .service-grid,.testi-grid,.form-row{grid-template-columns:1fr}
+    .stat-strip{grid-template-columns:1fr}
+    .stat + .stat::before{left:22%;right:22%;top:0;bottom:auto;width:auto;height:1px}
+    .nav-links{
+      display:none;position:absolute;left:0;right:0;top:100%;
+      background:var(--bg-2);border-bottom:1px solid var(--line);
+      flex-direction:column;padding:1rem 1.5rem 1.4rem;gap:1rem;align-items:flex-start;
+    }
+    .nav-links.open{display:flex}
+    .burger{display:block}
+    header.nav{top:33px}
+    section{padding:3.5rem 1.25rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- DEMO BANNER -->
+<div class="demo-banner" role="note">DEMO-SIVUSTO – esimerkki, ei virallinen sivusto</div>
+
+<!-- NAV -->
+<header class="nav">
+  <nav class="nav-inner" aria-label="Päävalikko">
+    <a class="brand" href="#alku">
+      <svg viewBox="0 0 32 32" role="img" aria-label="Pilviö Ky logo">
+        <rect width="32" height="32" rx="7" fill="#0f172a"/>
+        <path d="M8 20c0-4 3-7 7-7 1 0 2 .2 3 .7C18.6 11 21 10 23 11.5c2 1.6 2.3 4.5 1 6.5H10c-1.2 0-2-1-2-2z" fill="#0284c7"/>
+        <path d="M13 20v4M19 20v4" stroke="#38bdf8" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <span>Pilviö <em>Ky</em></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Avaa valikko" aria-expanded="false" aria-controls="nav-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="#palvelut">Palvelut</a>
+      <a href="#luottamus">Miksi me</a>
+      <a href="#palautteet">Palautteet</a>
+      <a href="#yhteys" class="nav-cta">Pyydä tarjous</a>
+    </div>
+  </nav>
+</header>
+
+<main id="alku">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+          Pieni ja ketterä paikallinen LVI-toimija
+        </span>
+        <h1>LVI-työt <span class="hl">joustavasti</span> ja henkilökohtaisesti – suoraan Oulunkylästä</h1>
+        <p class="lede">Pilviö Ky hoitaa yleiset LVI-työt, putkistojen asennukset sekä huolto- ja korjaustyöt nopealla aikataululla. Saat aina saman tekijän, suoran yhteyden ja työn, johon voit luottaa.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#yhteys">
+            Pyydä tarjous
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#palvelut">Tutustu palveluihin</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="pipe-art">
+          <svg viewBox="0 0 400 300" role="img" aria-label="Koristeellinen kuvitus putkistosta ja vesipisarasta">
+            <defs>
+              <linearGradient id="pipeGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#1e3a5f"/><stop offset="1" stop-color="#0f2036"/>
+              </linearGradient>
+              <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#0284c7"/>
+              </linearGradient>
+            </defs>
+            <rect x="40" y="60" width="320" height="34" rx="17" fill="url(#pipeGrad)" stroke="#2b4a6e" stroke-width="1.5"/>
+            <rect x="183" y="60" width="34" height="120" rx="12" fill="url(#pipeGrad)" stroke="#2b4a6e" stroke-width="1.5"/>
+            <rect x="183" y="180" width="177" height="34" rx="17" fill="url(#pipeGrad)" stroke="#2b4a6e" stroke-width="1.5"/>
+            <circle cx="120" cy="77" r="6" fill="#38bdf8" opacity=".85"/>
+            <circle cx="170" cy="77" r="4" fill="#38bdf8" opacity=".5"/>
+            <circle cx="200" cy="120" r="5" fill="#38bdf8" opacity=".7"/>
+            <circle cx="200" cy="150" r="4" fill="#38bdf8" opacity=".45"/>
+            <path d="M200 232c0 0-22 26-22 41a22 22 0 0 0 44 0c0-15-22-41-22-41z" fill="url(#waterGrad)"/>
+            <path d="M191 276a11 11 0 0 0 9 12" stroke="#bfe8fb" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="330" cy="240" r="26" fill="none" stroke="#38bdf8" stroke-width="2" opacity=".35" stroke-dasharray="5 6"/>
+            <circle cx="60" cy="200" r="16" fill="none" stroke="#38bdf8" stroke-width="2" opacity=".25"/>
+          </svg>
+        </div>
+        <div class="float-card float-a">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <div>Nopea reagointi<small>Arvio usein saman päivän aikana</small></div>
+        </div>
+        <div class="float-card float-b">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg>
+          <div>Luotettava kumppani<small>Selkeä hinta, siisti jälki</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="palvelut">
+    <div class="wrap">
+      <p class="kicker reveal">Palvelut</p>
+      <h2 class="reveal">Kaikki LVI-tarpeesi yhden katon alla</h2>
+      <p class="section-lede reveal">Pienenä ja ketteränä toimijana pystymme joustamaan aikatauluissasi – työ tehdään huolella alusta loppuun itse, ilman välikäsiä.</p>
+      <div class="service-grid">
+        <article class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Työkalu-ikoni"><path d="M14.7 6.3a4.5 4.5 0 0 0-6 5.7L3 17.7 6.3 21l5.7-5.7a4.5 4.5 0 0 0 5.7-6l-3 3-2.4-.7-.7-2.4 3-2.9z"/></svg>
+          </div>
+          <h3>Yleiset LVI-työt</h3>
+          <p>Lämmitys-, vesi- ja ilmanvaihtojärjestelmien asennukset ja säätötyöt koteihin sekä pieniin yritystiloihin – aina kohteen tarpeen mukaan.</p>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Putki-ikoni"><path d="M3 8h9a5 5 0 0 1 5 5v8"/><path d="M3 5v6M14 21h6"/><path d="M6 8v3"/></svg>
+          </div>
+          <h3>Putkistojen asennukset</h3>
+          <p>Vesi- ja viemäriputkistojen uusiminen ja laajennukset remonteissa sekä uudiskohteissa. Selkeä suunnittelu ja huolellinen viimeistely.</p>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Huolto-ikoni"><path d="M12 3a7 7 0 0 1 7 7c0 3-2 5-4 6v2h-6v-2c-2-1-4-3-4-6a7 7 0 0 1 7-7z"/><path d="M9 21h6"/></svg>
+          </div>
+          <h3>Huolto- ja korjaustyöt</h3>
+          <p>Hanat, wc-istuimet, vuodot ja tukokset – pienet ja isommatkin viat korjataan ripeästi, usein jo saman viikon aikana.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust" id="luottamus">
+    <div class="wrap">
+      <div class="trust-grid">
+        <div>
+          <p class="kicker reveal">Miksi Pilviö Ky</p>
+          <h2 class="reveal">Paikallinen ammattilainen, johon saat yhteyden suoraan</h2>
+          <div class="badge-pill reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg>
+            Vakuutettu ja luvallinen ammattilainen
+          </div>
+          <ul class="trust-points">
+            <li class="reveal">
+              <span class="check-dot"><svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5 11-11"/></svg></span>
+              <div><strong>Joustava palvelu</strong><span>Sovimme käynnit sinun aikatauluusi mukaan – myös iltaisin ja viikonloppuisin tarvittaessa.</span></div>
+            </li>
+            <li class="reveal">
+              <span class="check-dot"><svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5 11-11"/></svg></span>
+              <div><strong>Yksi tuttu tekijä</strong><span>Ei vaihtuvia alihankkijoita – sama ammattilainen hoitaa työn alusta loppuun ja vastaa siitä.</span></div>
+            </li>
+            <li class="reveal">
+              <span class="check-dot"><svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5 11-11"/></svg></span>
+              <div><strong>Rehellinen hinnoittelu</strong><span>Kirjallinen tarjous ennen töiden alkua – ei yllätyskuluja jälkikäteen.</span></div>
+            </li>
+          </ul>
+          <p class="local-line reveal">Palvelemme Oulunkylä ja koko pääkaupunkiseudun alueella.</p>
+        </div>
+        <div class="reveal">
+          <div class="stat-strip" role="group" aria-label="Kokemusluvut">
+            <div class="stat">
+              <div class="num" data-count="15">0</div>
+              <div class="lbl">Vuotta alan kokemusta</div>
+            </div>
+            <div class="stat">
+              <div class="num" data-count="800">0</div>
+              <div class="lbl">Toteutettua työkeikkaa</div>
+            </div>
+            <div class="stat">
+              <div class="num" data-count="98">0</div>
+              <div class="lbl">% asiakkaista suosittelee</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="palautteet">
+    <div class="wrap">
+      <p class="kicker reveal">Palautteet</p>
+      <h2 class="reveal">Mitä asiakkaat sanovat</h2>
+      <p class="section-lede reveal">Joustavuus ja henkilökohtainen palvelu näkyvät arjessa – tässä muutamia kokemuksia.</p>
+      <div class="testi-grid">
+        <article class="testi-card reveal">
+          <svg class="quote-mark" viewBox="0 0 24 24" fill="#38bdf8" aria-hidden="true"><path d="M10 8v6a4 4 0 0 1-4 4H5v-3h1a2 2 0 0 0 2-2H5V8h5zm9 0v6a4 4 0 0 1-4 4h-1v-3h1a2 2 0 0 0 2-2h-3V8h5z"/></svg>
+          <div class="stars" aria-label="Viisi tähteä">
+            <svg viewBox="0 0 24 24" fill="#38bdf8" aria-hidden="true"><path d="m12 2 3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#38bdf8" aria-hidden="true"><path d="m12 2 3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#38bdf8" aria-hidden="true"><path d="m12 2 3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#38bdf8" aria-hidden="true"><path d="m12 2 3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#38bdf8" aria-hidden="true"><path d="m12 2 3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8z"/></svg>
+          </div>
+          <p>"Hananvaihto ja wc-istuimen korjaus hoidettiin yhdellä käynnillä. Aikataulu jousti meidän vuokramuuton mukaan – iso kiitos siitä!"</p>
+          <div class="testi-who">
+            <span class="avatar" aria-hidden="true">ML</span>
+            <div><strong>Mari L.</strong><small>Omakotitalo, Oulunkylä</small></div>
+          </div>
+        </article>
+        <article class="testi-card reveal">
+          <svg class="quote-mark" viewBox="0 0 24 24" fill="#38bdf8" aria-hidden="true"><path d="M10 8v6a4 4 0 0 1-4 4H5v-3h1a2 2 0 0 0 2-2H5V8h5zm9 0v6a4 4 0 0 1-4 4h-1v-3h1a2 2 0 0 0 2-2h-3V8h5z"/></svg>
+          <div class="stars" aria-label="Viisi tähteä">
+            <svg viewBox="0 0 24 24" fill="#38bdf8" aria-hidden="true"><path d="m12 2 3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#38bdf8" aria-hidden="true"><path d="m12 2 3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#38bdf8" aria-hidden="true"><path d="m12 2 3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#38bdf8" aria-hidden="true"><path d="m12 2 3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#38bdf8" aria-hidden="true"><path d="m12 2 3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8z"/></svg>
+          </div>
+          <p>"Kylpyhuoneremontin putkityöt sujuivat sovitusti ja työmaa pysyi siistinä koko ajan. Hinta piti täsmälleen tarjouksen mukaisena."</p>
+          <div class="testi-who">
+            <span class="avatar" aria-hidden="true">JK</span>
+            <div><strong>Jussi K.</strong><small>Kerrostaloasunto, Käpylä</small></div>
+          </div>
+        </article>
+        <article class="testi-card reveal">
+          <svg class="quote-mark" viewBox="0 0 24 24" fill="#38bdf8" aria-hidden="true"><path d="M10 8v6a4 4 0 0 1-4 4H5v-3h1a2 2 0 0 0 2-2H5V8h5zm9 0v6a4 4 0 0 1-4 4h-1v-3h1a2 2 0 0 0 2-2h-3V8h5z"/></svg>
+          <div class="stars" aria-label="Viisi tähteä">
+            <svg viewBox="0 0 24 24" fill="#38bdf8" aria-hidden="true"><path d="m12 2 3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#38bdf8" aria-hidden="true"><path d="m12 2 3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#38bdf8" aria-hidden="true"><path d="m12 2 3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#38bdf8" aria-hidden="true"><path d="m12 2 3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#38bdf8" aria-hidden="true"><path d="m12 2 3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8z"/></svg>
+          </div>
+          <p>"Vesivahinko vaati nopeaa toimintaa – paikalle tultiin samana iltana. Rauhallinen ja asiantunteva ote koko tilanteessa."</p>
+          <div class="testi-who">
+            <span class="avatar" aria-hidden="true">SH</span>
+            <div><strong>Sari H.</strong><small>Rivitalo, Malmi</small></div>
+          </div>
+        </article>
+      </div>
+      <p class="testi-note">Esimerkkipalautteita – havainnollistavat sivuston sisältöä.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="yhteys">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <p class="kicker reveal">Yhteystiedot</p>
+          <h2 class="reveal">Pyydä maksuton tarjous</h2>
+          <p class="section-lede reveal">Kerro lyhyesti tarpeestasi – vastaamme yleensä jo saman arkipäivän aikana.</p>
+          <ul class="contact-info">
+            <li class="reveal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+              <div><strong>Puhelin</strong><span>040 000 0000</span></div>
+            </li>
+            <li class="reveal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              <div><strong>Sähköposti</strong><span>info@esimerkki.fi</span></div>
+            </li>
+            <li class="reveal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div><strong>Osoite</strong><span>Mäkitorpantie 11, 00620 Helsinki</span></div>
+            </li>
+          </ul>
+        </div>
+        <form id="quote-form" class="reveal" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="f-nimi">Nimi</label>
+              <input type="text" id="f-nimi" name="nimi" placeholder="Etunimi Sukunimi" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="f-puhelin">Puhelin</label>
+              <input type="tel" id="f-puhelin" name="puhelin" placeholder="040 123 4567" autocomplete="tel">
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-email">Sähköposti</label>
+            <input type="email" id="f-email" name="sahkoposti" placeholder="nimi@esimerkki.fi" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="f-viesti">Viesti</label>
+            <textarea id="f-viesti" name="viesti" placeholder="Kerro lyhyesti, millaisesta LVI-työstä on kyse..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
+            Lähetä tarjouspyyntö
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>
+          </button>
+          <p id="form-msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p class="f-brand">Pilviö <em>Ky</em> – Oulunkylä, Helsinki</p>
+  <p>Yleiset LVI-työt · Putkistojen asennukset · Huolto- ja korjaustyöt</p>
+  <span class="f-demo">DEMO-SIVUSTO – esimerkki, ei virallinen sivusto</span>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  (function(){
+    var burger = document.getElementById('burger');
+    var links = document.getElementById('nav-links');
+    burger.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? 'Sulje valikko' : 'Avaa valikko');
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        links.classList.remove('open');
+        burger.setAttribute('aria-expanded','false');
+        burger.setAttribute('aria-label','Avaa valikko');
+      });
+    });
+  })();
+
+  // Reveal on scroll
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){
+      els.forEach(function(el){ el.classList.add('visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold:.15});
+    els.forEach(function(el){ io.observe(el); });
+  })();
+
+  // Animated stat counters
+  (function(){
+    var nums = document.querySelectorAll('.stat .num');
+    if(!('IntersectionObserver' in window)){
+      nums.forEach(function(n){ n.textContent = n.dataset.count; });
+      return;
+    }
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting) return;
+        io.unobserve(e.target);
+        var el = e.target, target = parseInt(el.dataset.count, 10);
+        if(reduce){ el.textContent = target; return; }
+        var dur = 1400, start = null;
+        function step(ts){
+          if(!start) start = ts;
+          var p = Math.min((ts - start) / dur, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(target * eased);
+          if(p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }, {threshold:.4});
+    nums.forEach(function(n){ io.observe(n); });
+  })();
+
+  // Demo form
+  (function(){
+    var form = document.getElementById('quote-form');
+    var msg = document.getElementById('form-msg');
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      msg.textContent = 'Kiitos! Tämä on demovierailu – lomake ei lähetä tietoja.';
+      msg.classList.add('show');
+      form.reset();
+    });
+  })();
+</script>
+</body>
+</html>
